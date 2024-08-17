@@ -2,10 +2,13 @@ import unittest
 from playwright.sync_api import sync_playwright
 
 
+# TODO: make it work in a container
+
 class OpenWeatherMapMainPageTest(unittest.TestCase):
 
     def test_simple_automated_test(self):
         with sync_playwright() as p:
+            # TODO: make it work with head browser
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
 
@@ -25,11 +28,10 @@ class OpenWeatherMapMainPageTest(unittest.TestCase):
             search_bar = page.get_by_placeholder("Search city")
             search_bar.fill("Prague")
 
-            # Click the search button
             search_button = page.locator("button[type='submit']")
             search_button.click()
 
-            # Wait for the search results to load (adjust timeout as needed)
+            # Wait for the search results to load (we will deal with timeouts later)
             page.wait_for_timeout(2000)
 
             # Verify the current temperature is displayed
