@@ -9,8 +9,8 @@
             "type": "node",
             "request": "launch",
             "cwd": "${fileDirname}",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": ["run", "watch"],
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
         }
     ]
