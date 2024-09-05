@@ -21,6 +21,15 @@
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Run third exercise",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/tests/practice3_setup",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
         }
     ]
 }
