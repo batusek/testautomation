@@ -8,7 +8,7 @@
             "name": "Run tests",
             "type": "node",
             "request": "launch",
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
