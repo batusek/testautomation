@@ -5,10 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run tests",
+            "name": "Run first exercise",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/tests/practice1_intro",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run second exercise",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/tests/practice2_locators",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
