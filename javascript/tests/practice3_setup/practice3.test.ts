@@ -1,43 +1,26 @@
 import { test, expect } from '@playwright/test';
 
-test('map exists', async ({ page }) => {
-  await page.goto('https://openstreetmap.org/login');
-  const username = await page.getByRole("textbox", { name:"username"} );
-  await expect(username).toBeVisible();
-  await username.fill("TestAutomationUser");
-
-  const password = await page.getByRole("textbox", { name:"password"} );
-  await password.fill("Auto-Tests");
-  await page.waitForTimeout(3000);
-  
-  const authFile = 'playwright/.auth/user.json';
-  await page.context().storageState({ path: authFile });
-
-  // const login = await page.locator("[type=submit]");
-  const login = await page.getByRole("button", { name: "Log in"} );
-  await login.click();
-
+test('map exists', async ( {page} ) => {
   await page.goto('https://openstreetmap.org/');
 
   const map = await page.locator("#map")
   await expect(map).toBeVisible();
 });
 
-test('explore locators', async( { page}) => {
+test('explore locators', async( {page} ) => {
   await page.goto('https://openstreetmap.org/');
-  await page.waitForTimeout(3000);
   
-  const heading = await page.getByRole("heading", {name: "OpenStreetMap logo"});
+  const heading = await page.getByRole("heading");
   await expect(heading).toBeVisible();
 
-  const search = await page.getByText("History");
-  await expect(search).toHaveAttribute("id","history_tab");
+  const history = await page.locator("#history_tab")
+  await expect(history).toBeVisible();
 });
 
-test('search returns results', async( { page}) => {
+test('search returns results', async( {page} ) => {
   await page.goto('https://openstreetmap.org/');
-  await page.waitForTimeout(3000);
     
+  // const search_bar = await page.locator("#query");
   const search_bar = await page.getByRole("textbox", { name:"Search"} );
   search_bar.fill("Prague");
 

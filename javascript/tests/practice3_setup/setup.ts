@@ -7,9 +7,9 @@ setup('authenticate', async ({ page }) => {
   
     const password = await page.getByRole("textbox", { name:"password"} );
     await password.fill("Auto-Tests");
-    await page.waitForTimeout(3000);
+    // await page.waitForTimeout(500);
     
-    const authFile = 'playwright/.auth/user.json';
+    const authFile = '.auth/user.json';
     await page.context().storageState({ path: authFile });
   
     // const login = await page.locator("[type=submit]");
