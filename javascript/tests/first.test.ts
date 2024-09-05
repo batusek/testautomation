@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('map exists', async ({ page }) => {
+  await page.goto('https://openstreetmap.org/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+  const map = await page.locator("#map")
+  await expect(map).toBeVisible();
 });
 
