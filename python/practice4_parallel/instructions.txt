@@ -1,1 +1,9 @@
-A placeholder file
+    # Tasks:
+    # 1. run all tests from the command line serially
+    # 2. run all tests in parallel (using unittest-parallel)
+    # 3. Compare run times
+    #
+    # Solution:
+    # In the practice4_parallel dir
+    # 1. "python -m unittest"
+    # 2. "unittest-parallel --level class"
