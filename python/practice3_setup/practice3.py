@@ -3,41 +3,51 @@ from playwright.sync_api import sync_playwright
 
 
 class OpenStreetMapTest(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        playwright = sync_playwright()
-        p = playwright.start()
-        
-        # runs browser in a headless mode
-        browser = p.chromium.launch(headless=True)
-        cls.page = browser.new_page()
-        
-    def setUp(self):
-        self.page.goto("https://openstreetmap.org/")
-        self.page.wait_for_load_state("networkidle")
-
     def test_simple_automated_test(self):
-        map = self.page.locator("#map")
-        self.assertIsNotNone(map)
+        with sync_playwright() as p:
+            # runs browser in a headless mode
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+
+            page.goto("https://openstreetmap.org/")
+            page.wait_for_load_state("networkidle")
+            
+            map = page.locator("#map")
+            self.assertIsNotNone(map)
 
     def test_explore_locators(self):
-        heading = self.page.get_by_role("heading", name="OpenStreetMap")
-        self.assertIsNotNone(heading)
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
 
-        search = self.page.get_by_text("History")
-        self.assertEqual(search.get_attribute("id"),"history_tab")
+            page.goto("https://openstreetmap.org/")
+            page.wait_for_load_state("networkidle")
+            
+            heading = page.get_by_role("heading", name="OpenStreetMap")
+            self.assertIsNotNone(heading)
+
+            search = page.get_by_text("History")
+            self.assertEqual(search.get_attribute("id"),"history_tab")
 
     def test_search_returns_results(self):
-        search_bar = self.page.get_by_role("textbox", name="Search")
-        search_bar.fill("Prague")
-        search_button = self.page.get_by_role("button", name="Go")
-        search_button.click()
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
 
-        # Wait for the search results to load (we will deal with timeouts later)
-        self.page.wait_for_timeout(1000)
+            page.goto("https://openstreetmap.org/")
+            page.wait_for_load_state("networkidle")
+            
+            search_bar = page.get_by_role("textbox", name="Search")
+            search_bar.fill("Prague")
 
-        results = self.page.locator('#sidebar_content')
-        self.assertNotEqual(results.text_content,"")
+            search_button = page.get_by_role("button", name="Go")
+            search_button.click()
+
+            # Wait for the search results to load (we will deal with timeouts later)
+            page.wait_for_timeout(1000)
+
+            results = page.locator('#sidebar_content')
+            self.assertNotEqual(results.text_content,"")
 
 
 if __name__ == '__main__':

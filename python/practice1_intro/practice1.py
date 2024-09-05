@@ -8,11 +8,5 @@ class OpenStreetMapTest(unittest.TestCase):
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
 
-            page.goto("https://openstreetmap.org/")
-            page.wait_for_load_state("networkidle")
-            
-            map = page.locator("#map")
-            self.assertIsNotNone(map)
-        
 if __name__ == '__main__':
     unittest.main()
