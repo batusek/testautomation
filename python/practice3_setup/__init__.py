@@ -1,1 +1,1 @@
-from .mainpagetest import OpenStreetMapMainTest
+from .practice3 import OpenStreetMapTest

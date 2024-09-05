@@ -27,7 +27,7 @@ class OpenStreetMapTest(unittest.TestCase):
         search = self.page.get_by_text("History")
         self.assertEqual(search.get_attribute("id"),"history_tab")
 
-    def test_temperature_displayed_after_save(self):
+    def test_search_returns_results(self):
         search_bar = self.page.get_by_role("textbox", name="Search")
         search_bar.fill("Prague")
         search_button = self.page.get_by_role("button", name="Go")

@@ -29,7 +29,7 @@ class OpenStreetMapTest(unittest.TestCase):
             search = page.get_by_text("History")
             self.assertEqual(search.get_attribute("id"),"history_tab")
 
-    def test_temperature_displayed_after_save(self):
+    def test_search_returns_results(self):
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
