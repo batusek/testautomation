@@ -3,6 +3,8 @@ ARG VARIANT=16
 FROM mcr.microsoft.com/devcontainers/javascript-node:0-${VARIANT}
 
 RUN su node -c "umask 0002 && npm install -g http-server @vue/cli @vue/cli-service-global vitest vite"
+RUN sudo npx playwright install-deps
+RUN npx playwright install chromium
 WORKDIR /app
 
 EXPOSE 8080
