@@ -40,5 +40,14 @@
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
         }
+        {
+            "name": "Run fifth exercise",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/practice5_retry",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        }
     ]
 }

@@ -5,7 +5,11 @@ test('map exists', async ( {page} ) => {
 
   const map = await page.locator("#map")
   await expect(map).toBeVisible();
-  await page.waitForTimeout(2000);
+
+  const situation = Math.random();
+  if (situation<0.3)
+    await expect(true).toBeFalsy();
+
 });
 
 test('explore locators', async( {page} ) => {
@@ -16,7 +20,6 @@ test('explore locators', async( {page} ) => {
 
   const history = await page.locator("#history_tab")
   await expect(history).toBeVisible();
-  await page.waitForTimeout(2000);
 });
 
 test('search returns results', async( {page} ) => {
@@ -32,5 +35,4 @@ test('search returns results', async( {page} ) => {
   const results = await page.locator('#sidebar_content');
   await expect(results).not.toBeEmpty();
   await expect(results.textContent).toBeDefined();
-  await page.waitForTimeout(2000);
 });
