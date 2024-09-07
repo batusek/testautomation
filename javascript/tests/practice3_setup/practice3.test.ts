@@ -10,11 +10,12 @@ test('map exists', async ( {page} ) => {
 test('explore locators', async( {page} ) => {
   await page.goto('https://openstreetmap.org/');
   
-  const heading = await page.getByRole("heading");
+  const heading = await page.getByRole("heading", {name: "OpenStreetMap logo"});
   await expect(heading).toBeVisible();
 
-  const history = await page.locator("#history_tab")
-  await expect(history).toBeVisible();
+  const search = await page.getByText("History");
+  await expect(search).toHaveAttribute("id","history_tab");
+
 });
 
 test('search returns results', async( {page} ) => {
@@ -26,9 +27,6 @@ test('search returns results', async( {page} ) => {
 
   const search_button = await page.getByRole("button", { name: "Go"} );
   search_button.click();
-
-  //Wait for the search results to load (we will deal with timeouts later)
-  await page.waitForTimeout(1000);
 
   const results = await page.locator('#sidebar_content');
   await expect(results).not.toBeEmpty();
