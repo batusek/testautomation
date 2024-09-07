@@ -9,9 +9,10 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: 3,
   fullyParallel: true,
-  reporter: 'html',
+  reporter: 'list',
   use: {
     baseURL: 'https://openstreetmap.org/',
+    // headless: false,
   },
 
   /* Configure projects for major browsers */
