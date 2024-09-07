@@ -1,7 +1,7 @@
 import { test as setup } from '@playwright/test';
 
 setup('authenticate', async ({ page }) => {
-    await page.goto('https://openstreetmap.org/login');
+    await page.goto('/login');
     const username = await page.getByRole("textbox", { name:"username"} );
     await username.fill("TestAutomationUser");
   

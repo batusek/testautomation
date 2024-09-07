@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('map exists', async ( {page} ) => {
-  await page.goto('https://openstreetmap.org/');
+  await page.goto('/');
 
   const map = await page.locator("#map")
   await expect(map).toBeVisible();
@@ -9,7 +9,7 @@ test('map exists', async ( {page} ) => {
 });
 
 test('explore locators', async( {page} ) => {
-  await page.goto('https://openstreetmap.org/');
+  await page.goto('/');
   
   const heading = await page.getByRole("heading");
   await expect(heading).toBeVisible();
@@ -20,7 +20,7 @@ test('explore locators', async( {page} ) => {
 });
 
 test('search returns results', async( {page} ) => {
-  await page.goto('https://openstreetmap.org/');
+  await page.goto('/');
     
   // const search_bar = await page.locator("#query");
   const search_bar = await page.getByRole("textbox", { name:"Search"} );

@@ -5,13 +5,13 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: '.',
-  forbidOnly: !!process.env.CI,
+    forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 3,
   fullyParallel: true,
   reporter: 'html',
   use: {
-    trace: 'on-first-retry',
+    baseURL: 'https://openstreetmap.org/',
   },
 
   /* Configure projects for major browsers */
