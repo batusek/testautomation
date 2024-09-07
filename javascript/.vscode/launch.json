@@ -8,7 +8,7 @@
             "name": "Run first exercise",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/tests/practice1_intro",
+            "cwd": "${workspaceFolder}/practice1_intro",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
@@ -17,7 +17,7 @@
             "name": "Run second exercise",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/tests/practice2_locators",
+            "cwd": "${workspaceFolder}/practice2_locators",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
@@ -26,7 +26,7 @@
             "name": "Run third exercise",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/tests/practice3_setup",
+            "cwd": "${workspaceFolder}/practice3_setup",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
@@ -35,7 +35,7 @@
             "name": "Run fourth exercise",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/tests/practice4_parallel",
+            "cwd": "${workspaceFolder}/practice4_parallel",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
