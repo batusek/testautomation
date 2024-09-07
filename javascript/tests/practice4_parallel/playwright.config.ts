@@ -7,13 +7,11 @@ export default defineConfig({
   testDir: '.',
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: 3,
+  fullyParallel: true,
   reporter: 'html',
   use: {
-    // baseURL: 'http://127.0.0.1:3000',
-
     trace: 'on-first-retry',
-    // headless: false,
   },
 
   /* Configure projects for major browsers */

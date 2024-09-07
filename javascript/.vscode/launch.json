@@ -30,6 +30,15 @@
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Run fourth exercise",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/tests/practice4_parallel",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
         }
     ]
 }
