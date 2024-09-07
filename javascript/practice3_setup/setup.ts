@@ -6,7 +6,7 @@ setup('authenticate', async ({ page }) => {
     await username.fill("TestAutomationUser");
   
     const password = await page.getByRole("textbox", { name:"password"} );
-    await password.fill("Auto-Tests");
+    await password.fill("xxx");
     // await page.waitForTimeout(500);
     
     const authFile = '.auth/user.json';
