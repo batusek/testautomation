@@ -5,10 +5,46 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run tests",
+            "name": "Run first exercise",
             "type": "node",
             "request": "launch",
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}/practice1_intro",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run second exercise",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/practice2_locators",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run third exercise",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/practice3_setup",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run fourth exercise",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/practice4_parallel",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        }
+        {
+            "name": "Run fifth exercise",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/practice5_retry",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
