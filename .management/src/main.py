@@ -46,6 +46,10 @@ def javaScript():
     insertLines(exercise3,10,excerpt)
     insertLines(exercise3,3,excerpt)
 
+    removeLines("../javascript/practice3_setup/playwright.config.ts", 22, 23)
+    removeLines("../javascript/practice3_setup/playwright.config.ts", 20, 21)
+    removeLines("../javascript/practice3_setup/playwright.config.ts", 16, 17)
+    removeLines("../javascript/practice3_setup/setup.ts", 3, 16)
 
 # python()
 javaScript()
