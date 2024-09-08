@@ -7,9 +7,9 @@ export default defineConfig({
   testDir: '.',
   forbidOnly: !!process.env.CI,
   workers: 1,
-  reporter: 'dot',
+  reporter: 'list',
   use: {
-    trace: 'on-first-retry',
+    trace: 'on-first-retry'
   },
 
   /* Configure projects for major browsers */
