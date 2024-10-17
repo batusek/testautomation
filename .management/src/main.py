@@ -64,6 +64,6 @@ def javaScript():
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice4_parallel/playwright.config.ts")
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice5_retry/playwright.config.ts")
 
-# python()
+python()
 javaScript()
 
