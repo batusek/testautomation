@@ -56,9 +56,9 @@ def javaScript():
     removeLines(exercise3easy, 2,12)
 
 
-    removeLines("../javascript/practice3_setup/playwright.config.ts", 22, 22)
-    removeLines("../javascript/practice3_setup/playwright.config.ts", 20, 20)
-    removeLines("../javascript/practice3_setup/playwright.config.ts", 16, 16)
+    removeLines("../javascript/practice3_setup/playwright.config.ts", 23, 23)
+    removeLines("../javascript/practice3_setup/playwright.config.ts", 21, 21)
+    removeLines("../javascript/practice3_setup/playwright.config.ts", 17, 17)
     removeLines("../javascript/practice3_setup/setup.ts", 3, 16)
 
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice4_parallel/playwright.config.ts")
