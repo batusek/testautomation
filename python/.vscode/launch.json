@@ -27,11 +27,13 @@
             "console": "integratedTerminal",
         },
         {
-            "name": "Run fourth exercise",
+            "name": "Run fourth exercise serial",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/practice4_parallel/practice4.py",
-            "console": "integratedTerminal",
-        }
+            "args": ["discover","practice4_parallel"],
+            "module": "unittest",
+            "cwd": "${workspaceFolder}/",
+            "console": "integratedTerminal"
+        },        
     ]
 }
