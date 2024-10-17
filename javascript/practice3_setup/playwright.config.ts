@@ -9,6 +9,7 @@ export default defineConfig({
   workers: 1,
   reporter: 'list',
   use: {
+    headless: false,
     trace: 'on-first-retry'
   },
 

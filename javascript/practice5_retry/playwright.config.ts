@@ -12,6 +12,7 @@ export default defineConfig({
   use: {
     baseURL: 'https://openstreetmap.org/',
     trace: 'on-first-retry',
+    headless: false
   },
 
   /* Configure projects for major browsers */

@@ -10,8 +10,9 @@
             "request": "launch",
             "cwd": "${workspaceFolder}/practice1_intro",
             "runtimeExecutable": "npx",
-            "runtimeArgs": ["playwright", "test"],
-            "console": "integratedTerminal"
+            "runtimeArgs": ["playwright", "test", "--debug"],
+            "console": "integratedTerminal",
+            "env": { "DEBUG": "pw:api" }
         },
         {
             "name": "Run second exercise",
@@ -48,6 +49,15 @@
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
-        }
-    ]
+        },
+        {
+            "name": "Run codegen",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/practice1_intro",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "codegen"],
+            "console": "integratedTerminal"
+        },
+   ]
 }
