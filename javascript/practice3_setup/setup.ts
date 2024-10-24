@@ -7,12 +7,11 @@ setup('authenticate', async ({ page }) => {
 
   const password = await page.getByRole("textbox", { name:"password"} );
   await password.fill("xxx");
-  // await page.waitForTimeout(500);
   
-  const authFile = '.auth/user.json';
-  await page.context().storageState({ path: authFile });
-
   // const login = await page.locator("[type=submit]");
   const login = await page.getByRole("button", { name: "Log in"} );
   await login.click();
+
+  const authFile = '.auth/user.json';
+  await page.context().storageState({ path: authFile });
 });
