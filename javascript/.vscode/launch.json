@@ -59,5 +59,14 @@
             "runtimeArgs": ["playwright", "codegen"],
             "console": "integratedTerminal"
         },
+        {
+            "name": "Run cucumber",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["test"],
+            "console": "integratedTerminal"
+        },
    ]
 }
