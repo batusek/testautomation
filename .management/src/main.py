@@ -84,27 +84,27 @@ def python():
     removeLines("../python/practice4_parallel/instructions.txt", 5, 10)
 
 def javaScript():
-    shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice4_parallel/playwright.config.ts")
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice5_retry/playwright.config.ts")
 
 
 def typeScript():
-    # adaptFile("../javascript/cucumber_intro/features/calculator.feature")
-    # adaptFile("../javascript/cucumber_intro/features/step_definitions/calculator.ts")
-    #
-    # adaptFile("../javascript/cucumber_with_playwright/features/maps.feature")
-    # adaptFile("../javascript/cucumber_with_playwright/step_definitions/maps.ts")
-    #
-    # adaptFile("../javascript/playwright_intro/intro.test.ts")
-    # adaptFile("../javascript/playwright_locators/locators.test.ts")
+    adaptFile("../javascript/cucumber_intro/features/calculator.feature")
+    adaptFile("../javascript/cucumber_intro/features/step_definitions/calculator.ts")
 
-    # excerpt = extractExcerpt("../javascript/playwright_setup/setup.ts")
-    # insertExcerpts("../javascript/playwright_setup/setup.test.ts",excerpt)
-    # adaptFile("../javascript/playwright_setup/setup.ts")
+    adaptFile("../javascript/cucumber_with_playwright/features/maps.feature")
+    adaptFile("../javascript/cucumber_with_playwright/step_definitions/maps.ts")
+
+    adaptFile("../javascript/playwright_intro/intro.test.ts")
+    adaptFile("../javascript/playwright_locators/locators.test.ts")
+
+    excerpt = extractExcerpt("../javascript/playwright_setup/setup.ts")
+    insertExcerpts("../javascript/playwright_setup/setup.test.ts",excerpt)
+    adaptFile("../javascript/playwright_setup/setup.ts")
     excerpt = extractExcerpt("../javascript/playwright_setup/setup.easy.test.ts")
     adaptFile("../javascript/playwright_setup/setup.easy.test.ts")
     insertExcerpts("../javascript/playwright_setup/setup.easy.test.ts",excerpt)
 
+    shutil.copy("../javascript/playwright_intro/playwright.config.ts", "../javascript/playwright_parallel/playwright.config.ts")
 
 # python()
 # javaScript()
