@@ -83,10 +83,6 @@ def python():
     shutil.copy("../python/practice1_intro/practice1.py", "../python/practice2_locators/practice2.py")
     removeLines("../python/practice4_parallel/instructions.txt", 5, 10)
 
-def javaScript():
-    shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice5_retry/playwright.config.ts")
-
-
 def typeScript():
     adaptFile("../javascript/cucumber_intro/features/calculator.feature")
     adaptFile("../javascript/cucumber_intro/features/step_definitions/calculator.ts")
@@ -105,7 +101,7 @@ def typeScript():
     insertExcerpts("../javascript/playwright_setup/setup.easy.test.ts",excerpt)
 
     shutil.copy("../javascript/playwright_intro/playwright.config.ts", "../javascript/playwright_parallel/playwright.config.ts")
+    shutil.copy("../javascript/playwright_intro/playwright.config.ts", "../javascript/playwright_retry/playwright.config.ts")
 
 # python()
-# javaScript()
 typeScript()
