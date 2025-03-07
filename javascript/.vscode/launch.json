@@ -24,10 +24,10 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Run third exercise",
+            "name": "Run playwright setup",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/practice3_setup",
+            "cwd": "${workspaceFolder}/playwright_setup",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
