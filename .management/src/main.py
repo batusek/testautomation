@@ -135,8 +135,12 @@ def typeScript():
     # adaptFile("../javascript/playwright_intro/intro.test.ts")
     # adaptFile("../javascript/playwright_locators/locators.test.ts")
 
-    excerpt = extractExcerpt("../javascript/playwright_setup/setup.ts")
-    insertExcerpts("../javascript/playwright_setup/setup.test.ts",excerpt)
+    # excerpt = extractExcerpt("../javascript/playwright_setup/setup.ts")
+    # insertExcerpts("../javascript/playwright_setup/setup.test.ts",excerpt)
+    # adaptFile("../javascript/playwright_setup/setup.ts")
+    excerpt = extractExcerpt("../javascript/playwright_setup/setup.easy.test.ts")
+    adaptFile("../javascript/playwright_setup/setup.easy.test.ts")
+    insertExcerpts("../javascript/playwright_setup/setup.easy.test.ts",excerpt)
 
 
 # python()
