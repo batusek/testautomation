@@ -33,10 +33,10 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Run fourth exercise",
+            "name": "Run playwright parallel",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/practice4_parallel",
+            "cwd": "${workspaceFolder}/playwright_parallel",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"

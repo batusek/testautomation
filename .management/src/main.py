@@ -42,19 +42,6 @@ def insertExcerpt(f: TextIO, excerpt: list[str]):
     for l in excerpt:
         f.write(l)
 
-
-def insertLines(filename: str, start: int, excerpt: list[str]):
-    with open(filename, "r") as f:
-        lines = f.readlines()
-
-    with open(filename, "w") as f:
-        for i, line in enumerate(lines):
-            if i == start:
-                insertExcerpt(f, excerpt)
-
-            f.write(line)
-
-
 def insertExcerpts(filename: str, excerpt: list[str]):
     with open(filename, "r") as f:
         lines = f.readlines()
@@ -97,30 +84,6 @@ def python():
     removeLines("../python/practice4_parallel/instructions.txt", 5, 10)
 
 def javaScript():
-    with open("../javascript/practice3_setup/setup.ts", "r") as f:
-        lines = list(f.readlines())
-
-    excerpt = lines[3:-1] + ["\n"]
-    exercise3 = "../javascript/practice3_setup/practice3.test.ts"
-    insertLines(exercise3,21,excerpt)
-    insertLines(exercise3,10,excerpt)
-    insertLines(exercise3,3,excerpt)
-
-    exercise3easy = "../javascript/practice3_setup/practice3.easy.test.ts"
-    with open(exercise3easy, "r") as f:
-        lines = list(f.readlines())
-
-    excerpt = lines[3:10] + ["\n"]
-    insertLines(exercise3easy,20,excerpt)
-    insertLines(exercise3easy,14,excerpt)
-    removeLines(exercise3easy, 2,12)
-
-
-    removeLines("../javascript/practice3_setup/playwright.config.ts", 23, 23)
-    removeLines("../javascript/practice3_setup/playwright.config.ts", 21, 21)
-    removeLines("../javascript/practice3_setup/playwright.config.ts", 17, 17)
-    removeLines("../javascript/practice3_setup/setup.ts", 3, 16)
-
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice4_parallel/playwright.config.ts")
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice5_retry/playwright.config.ts")
 
