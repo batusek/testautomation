@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js practice6_cucumber/ --config practice6_cucumber/cucumber.json"
+    "test": "cucumber-js cucumber_intro/ --config cucumber_intro/cucumber.json"
   },  
   "keywords": [],
   "author": "",

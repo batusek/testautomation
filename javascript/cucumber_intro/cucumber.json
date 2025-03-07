@@ -7,7 +7,7 @@
             "ts-node/register"
         ],
         "require": [
-            "practice6_cucumber/features/step_definitions/*.ts"
+            "cucumber_intro/features/step_definitions/*.ts"
         ]
     }
 }
