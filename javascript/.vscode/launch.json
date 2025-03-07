@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run first exercise",
+            "name": "Run playwright intro",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/practice1_intro",
+            "cwd": "${workspaceFolder}/playwright_intro",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test", "--debug"],
             "console": "integratedTerminal",
@@ -40,7 +40,7 @@
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
-        }
+        },
         {
             "name": "Run fifth exercise",
             "type": "node",
