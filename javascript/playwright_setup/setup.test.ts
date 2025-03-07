@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('map exists', async ( {page} ) => {
+  // Excerpt
   await page.goto('https://openstreetmap.org/');
 
   const map = await page.locator("#map")
@@ -8,6 +9,7 @@ test('map exists', async ( {page} ) => {
 });
 
 test('explore locators', async( {page} ) => {
+  // Excerpt
   await page.goto('https://openstreetmap.org/');
   
   const heading = await page.getByRole("heading", {name: "OpenStreetMap logo"});
@@ -19,6 +21,7 @@ test('explore locators', async( {page} ) => {
 });
 
 test('search returns results', async( {page} ) => {
+  // Excerpt
   await page.goto('https://openstreetmap.org/');
     
   // const search_bar = await page.locator("#query");

@@ -1,6 +1,8 @@
 import { test as setup } from '@playwright/test';
 
 setup('authenticate', async ({ page }) => {
+  // After start
+  // Excerpt start
   await page.goto('https://openstreetmap.org/login');
   const username = await page.getByRole("textbox", { name:"username"} );
   await username.fill("TestAutomationUser");
@@ -14,4 +16,6 @@ setup('authenticate', async ({ page }) => {
 
   const authFile = '.auth/user.json';
   await page.context().storageState({ path: authFile });
+  // Excerpt end
+  // After end
 });

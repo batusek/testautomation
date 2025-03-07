@@ -1,4 +1,5 @@
 import shutil
+from typing import TextIO
 
 
 def adaptFile(filename: str):
@@ -36,6 +37,12 @@ def removeLines(filename: str, start: int, end: int):
             if i > end:
                 f.write(line)
 
+
+def insertExcerpt(f: TextIO, excerpt: list[str]):
+    for l in excerpt:
+        f.write(l)
+
+
 def insertLines(filename: str, start: int, excerpt: list[str]):
     with open(filename, "r") as f:
         lines = f.readlines()
@@ -43,10 +50,44 @@ def insertLines(filename: str, start: int, excerpt: list[str]):
     with open(filename, "w") as f:
         for i, line in enumerate(lines):
             if i == start:
-                for l in excerpt:
-                    f.write(l)
+                insertExcerpt(f, excerpt)
 
             f.write(line)
+
+
+def insertExcerpts(filename: str, excerpt: list[str]):
+    with open(filename, "r") as f:
+        lines = f.readlines()
+
+    with open(filename, "w") as f:
+        for line in enumerate(lines):
+            if "Excerpt" in line:
+                insertExcerpt(f, excerpt)
+                continue
+
+            f.write(line)
+
+
+def extractExcerpt(filename: str) -> list[str]:
+    with open("../javascript/practice3_setup/setup.ts", "r") as f:
+        lines = list(f.readlines())
+
+    result = []
+    inExcerpt = False
+    for line in lines:
+        if "Excerpt start" in line:
+            inExcerpt = True
+            continue
+
+        if "Excerpt end" in line:
+            inExcerpt = False
+            continue
+
+        if inExcerpt:
+            result.append(line)
+
+    return result
+
 
 
 def python():
@@ -85,14 +126,17 @@ def javaScript():
 
 
 def typeScript():
-    adaptFile("../javascript/cucumber_intro/features/calculator.feature")
-    adaptFile("../javascript/cucumber_intro/features/step_definitions/calculator.ts")
+    # adaptFile("../javascript/cucumber_intro/features/calculator.feature")
+    # adaptFile("../javascript/cucumber_intro/features/step_definitions/calculator.ts")
+    #
+    # adaptFile("../javascript/cucumber_with_playwright/features/maps.feature")
+    # adaptFile("../javascript/cucumber_with_playwright/step_definitions/maps.ts")
+    #
+    # adaptFile("../javascript/playwright_intro/intro.test.ts")
+    # adaptFile("../javascript/playwright_locators/locators.test.ts")
 
-    adaptFile("../javascript/cucumber_with_playwright/features/maps.feature")
-    adaptFile("../javascript/cucumber_with_playwright/step_definitions/maps.ts")
-
-    adaptFile("../javascript/playwright_intro/intro.test.ts")
-    adaptFile("../javascript/playwright_locators/locators.test.ts")
+    excerpt = extractExcerpt("../javascript/practice3_setup/setup.ts")
+    insertExcerpts("../javascript/playwright_setup/setup.test.ts",excerpt)
 
 
 # python()
