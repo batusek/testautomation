@@ -60,7 +60,7 @@ def insertExcerpts(filename: str, excerpt: list[str]):
         lines = f.readlines()
 
     with open(filename, "w") as f:
-        for line in enumerate(lines):
+        for line in lines:
             if "Excerpt" in line:
                 insertExcerpt(f, excerpt)
                 continue
@@ -69,7 +69,7 @@ def insertExcerpts(filename: str, excerpt: list[str]):
 
 
 def extractExcerpt(filename: str) -> list[str]:
-    with open("../javascript/practice3_setup/setup.ts", "r") as f:
+    with open(filename, "r") as f:
         lines = list(f.readlines())
 
     result = []
@@ -135,7 +135,7 @@ def typeScript():
     # adaptFile("../javascript/playwright_intro/intro.test.ts")
     # adaptFile("../javascript/playwright_locators/locators.test.ts")
 
-    excerpt = extractExcerpt("../javascript/practice3_setup/setup.ts")
+    excerpt = extractExcerpt("../javascript/playwright_setup/setup.ts")
     insertExcerpts("../javascript/playwright_setup/setup.test.ts",excerpt)
 
 
