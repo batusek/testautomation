@@ -42,10 +42,10 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Run fifth exercise",
+            "name": "Run playwright retry",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/practice5_retry",
+            "cwd": "${workspaceFolder}/playwright_retry",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
