@@ -15,10 +15,10 @@
             "env": { "DEBUG": "pw:api" }
         },
         {
-            "name": "Run second exercise",
+            "name": "Run playwright locators",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/practice2_locators",
+            "cwd": "${workspaceFolder}/playwright_locators",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
