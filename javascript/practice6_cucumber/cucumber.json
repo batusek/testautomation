@@ -2,6 +2,12 @@
     "default": {
         "formatOptions": {
             "snippetInterface": "synchronous"
-        }
+        },
+        "requireModule": [
+            "ts-node/register"
+        ],
+        "require": [
+            "practice6_cucumber/features/step_definitions/*.ts"
+        ]
     }
 }

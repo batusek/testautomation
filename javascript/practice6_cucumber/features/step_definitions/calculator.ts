@@ -1,6 +1,5 @@
-const assert = require('assert');
-const { Given, When, Then } = require('@cucumber/cucumber');
-
+import * as assert from 'assert';
+import { Given, When, Then } from '@cucumber/cucumber';
 
 Given('the calculator is open', function () {
 // After start
