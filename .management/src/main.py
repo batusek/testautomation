@@ -94,6 +94,8 @@ def typeScript():
     adaptFile("../javascript/cucumber_with_playwright/features/maps.feature")
     adaptFile("../javascript/cucumber_with_playwright/step_definitions/maps.ts")
 
+    adaptFile("../javascript/practice1_intro/practice1.test.ts")
+
 # python()
 # javaScript()
 typeScript()
