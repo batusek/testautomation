@@ -60,12 +60,21 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Run cucumber",
+            "name": "Run cucumber intro",
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "runtimeExecutable": "npm",
             "runtimeArgs": ["test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run cucumber with playwright",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "test2"],
             "console": "integratedTerminal"
         },
    ]

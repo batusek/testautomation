@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js cucumber_intro/ --config cucumber_intro/cucumber.json"
+    "test": "cucumber-js cucumber_intro/ --config cucumber_intro/cucumber.json",
+    "test2": "cucumber-js cucumber_with_playwright/ --config cucumber_with_playwright/cucumber.json"
   },  
   "keywords": [],
   "author": "",
