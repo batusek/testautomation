@@ -1,6 +1,29 @@
 import shutil
 
 
+def adaptFile(filename: str):
+    with open(filename, "r") as f:
+        lines = f.readlines()
+
+    with open(filename, "w") as f:
+        writeLine = True
+        for i, line in enumerate(lines):
+            if "After start" in line:
+                writeLine = False
+
+            if "After end" in line:
+                writeLine = True
+                continue
+
+            if "Uncomment" in line:
+                components = line.split(":")
+                f.write(":".join(components[1:]))
+                continue
+
+            if writeLine:
+                f.write(line)
+
+
 def removeLines(filename: str, start: int, end: int):
     with open(filename, "r") as f:
         lines = f.readlines()
@@ -64,6 +87,13 @@ def javaScript():
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice4_parallel/playwright.config.ts")
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice5_retry/playwright.config.ts")
 
-python()
-javaScript()
+def typeScript():
+    adaptFile("../javascript/cucumber_intro/features/calculator.feature")
+    adaptFile("../javascript/cucumber_intro/features/step_definitions/calculator.ts")
 
+    adaptFile("../javascript/cucumber_with_playwright/features/maps.feature")
+    adaptFile("../javascript/cucumber_with_playwright/step_definitions/maps.ts")
+
+# python()
+# javaScript()
+typeScript()
