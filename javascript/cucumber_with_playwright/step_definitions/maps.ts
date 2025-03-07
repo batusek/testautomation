@@ -1,4 +1,4 @@
-import { Before, After, Given, When, Then } from '@cucumber/cucumber';
+import { Before, After, Given, Then } from '@cucumber/cucumber';
 import { chromium } from 'playwright';
 import { expect } from '@playwright/test';
 
@@ -21,9 +21,6 @@ Given('the map page is open', async function () {
 // After start
     await this.page.goto('https://openstreetmap.org/');
 // After end
-});
-
-When('I inspect the content', function () {
 });
 
 Then('map container is visible', async function () {
