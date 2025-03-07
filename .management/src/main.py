@@ -56,10 +56,6 @@ def python():
     removeLines("../python/practice4_parallel/instructions.txt", 5, 10)
 
 def javaScript():
-    removeLines("../javascript/practice1_intro/practice1.test.ts", 5, 6)
-    removeLines("../javascript/practice2_locators/practice2.test.ts", 15, 24)
-    removeLines("../javascript/practice2_locators/practice2.test.ts", 5, 9)
-
     with open("../javascript/practice3_setup/setup.ts", "r") as f:
         lines = list(f.readlines())
 
@@ -87,6 +83,7 @@ def javaScript():
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice4_parallel/playwright.config.ts")
     shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice5_retry/playwright.config.ts")
 
+
 def typeScript():
     adaptFile("../javascript/cucumber_intro/features/calculator.feature")
     adaptFile("../javascript/cucumber_intro/features/step_definitions/calculator.ts")
@@ -94,7 +91,9 @@ def typeScript():
     adaptFile("../javascript/cucumber_with_playwright/features/maps.feature")
     adaptFile("../javascript/cucumber_with_playwright/step_definitions/maps.ts")
 
-    adaptFile("../javascript/practice1_intro/practice1.test.ts")
+    adaptFile("../javascript/playwright_intro/intro.test.ts")
+    adaptFile("../javascript/playwright_locators/locators.test.ts")
+
 
 # python()
 # javaScript()
