@@ -57,9 +57,9 @@ export class GeoUtils {
     // After end
 
     async distance(city1: string, city2: string): Promise<number> {
-        // Uncomment:    let geocoder = new Geocoder();
-        // Uncomment:    const [lat1, lon1] = await geocoder.geocode(city1);
-        // Uncomment:    const [lat2, lon2] = await geocoder.geocode(city2);
+        // Uncomment:       let geocoder = new Geocoder();
+        // Uncomment:       const [lat1, lon1] = await geocoder.geocode(city1);
+        // Uncomment:       const [lat2, lon2] = await geocoder.geocode(city2);
 
         // After start
         const [lat1, lon1] = await this.geocoder.geocode(city1);

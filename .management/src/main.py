@@ -103,5 +103,8 @@ def typeScript():
     shutil.copy("../javascript/playwright_intro/playwright.config.ts", "../javascript/playwright_parallel/playwright.config.ts")
     shutil.copy("../javascript/playwright_intro/playwright.config.ts", "../javascript/playwright_retry/playwright.config.ts")
 
+    adaptFile("../javascript/playwright_external/geocode.ts")
+    adaptFile("../javascript/playwright_external/geocode.test.ts")
+
 # python()
 typeScript()
