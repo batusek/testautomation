@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { Geocoder, GeocoderSimulator } from './geocode';
+import { Geocoder, GeocoderSimulator, GeoUtils } from './geocode';
+
 
 // After start
 test.describe('Geocoder tests', () => {
@@ -33,4 +34,12 @@ test('geocode Blansko', async () => {
     expect(latitude).toBeCloseTo(49.36,2);
     expect(longitude).toBeCloseTo(16.64,2);
 });
+
+test('distance between Blansko and Znojmo', async () => {
+    const geocoder = new Geocoder();
+    const geoUtils = new GeoUtils(geocoder);
+    const distance = await geoUtils.distance("Blansko", "Znojmo");
+    expect(distance).toBeCloseTo(71, 0);
+});
+
 // After end

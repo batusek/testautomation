@@ -42,4 +42,33 @@ export class GeocoderSimulator extends Geocoder {
         return this.coordinates[city_name] || [0, 0];
     }
 }
+
+export class GeoUtils {
+    private geocoder: Geocoder;
+    private static EARTH_RADIUS_KM = 6371;
+
+    constructor(geocoder: Geocoder) {
+        this.geocoder = geocoder;
+    }
+
+    async distance(city1: string, city2: string): Promise<number> {
+        const [lat1, lon1] = await this.geocoder.geocode(city1);
+        const [lat2, lon2] = await this.geocoder.geocode(city2);
+        
+        const dLat = this.toRadians(lat2 - lat1);
+        const dLon = this.toRadians(lon2 - lon1);
+        
+        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                 Math.cos(this.toRadians(lat1)) * Math.cos(this.toRadians(lat2)) * 
+                 Math.sin(dLon/2) * Math.sin(dLon/2);
+        
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return GeoUtils.EARTH_RADIUS_KM * c;
+    }
+
+    private toRadians(degrees: number): number {
+        return degrees * (Math.PI / 180);
+    }
+}
+
 // After end
