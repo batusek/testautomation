@@ -51,10 +51,19 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "Run playwright external",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_external",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Run codegen",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/practice1_intro",
+            "cwd": "${workspaceFolder}/playwright_intro",
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "codegen"],
             "console": "integratedTerminal"
