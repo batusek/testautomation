@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
+//Uncomment: import { Geocoder, GeoUtils } from './geocode';
+// After start
 import { Geocoder, GeocoderSimulator, GeoUtils } from './geocode';
+//After end
 
 const cityLocations = {
     "Blansko": [49.363388, 16.643891] as [number, number],
