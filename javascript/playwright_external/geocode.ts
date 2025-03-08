@@ -29,3 +29,15 @@ export class Geocoder {
     }
 }
 
+export class GeocoderSimulator extends Geocoder {
+    private coordinates: { [key: string]: [number, number] };
+
+    constructor(coordinates: { [key: string]: [number, number] }) {
+        super();
+        this.coordinates = coordinates;
+    }
+
+    async geocode(city_name: string): Promise<[number, number]> {
+        return this.coordinates[city_name] || [0, 0];
+    }
+}
