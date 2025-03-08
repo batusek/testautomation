@@ -29,6 +29,7 @@ export class Geocoder {
     }
 }
 
+// After start
 export class GeocoderSimulator extends Geocoder {
     private coordinates: { [key: string]: [number, number] };
 
@@ -41,3 +42,4 @@ export class GeocoderSimulator extends Geocoder {
         return this.coordinates[city_name] || [0, 0];
     }
 }
+// After end
