@@ -1,11 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
 export default defineConfig({
   testDir: '.',
-    forbidOnly: !!process.env.CI,
+  // After start
+  forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 3,
   fullyParallel: true,
@@ -26,4 +24,5 @@ export default defineConfig({
       dependencies: ['setup']
     },
   ],
+  // After end
 });
