@@ -24,6 +24,15 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "Run playwright concepts",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_concepts",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Run playwright setup",
             "type": "node",
             "request": "launch",

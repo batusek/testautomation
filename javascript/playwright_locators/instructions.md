@@ -7,7 +7,7 @@ Explore locators
 
 Tip: use "Run codegen" to find the first locator
 
-Search returns resuls
+Search returns results
 1. Find search box
 2. Fill "Prague"
 3. Find and click on the search button
