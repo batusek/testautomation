@@ -100,7 +100,9 @@ def typeScript():
     adaptFile("../javascript/playwright_setup/setup.easy.test.ts")
     insertExcerpts("../javascript/playwright_setup/setup.easy.test.ts",excerpt)
 
-    shutil.copy("../javascript/playwright_intro/playwright.config.ts", "../javascript/playwright_retry/playwright.config.ts")
+    adaptFile("../javascript/playwright_parallel/playwright.config.solution.ts")
+    adaptFile("../javascript/playwright_retry/playwright.config.solution.ts")
+    adaptFile("../javascript/playwright_setup/playwright.config.solution.ts")
 
     adaptFile("../javascript/playwright_external/geocode.ts")
     adaptFile("../javascript/playwright_external/geocode.test.ts")
