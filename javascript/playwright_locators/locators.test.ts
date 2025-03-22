@@ -7,8 +7,8 @@ test('explore locators', async( { page}) => {
   const heading = await page.getByRole("heading", {name: "OpenStreetMap logo"});
   await expect(heading).toBeVisible();
 
-  const search = await page.getByText("History");
-  await expect(search).toHaveAttribute("id","history_tab");
+  const search = await page.getByRole("link", { name: "History" });
+  await expect(search).toHaveAttribute("href","/history");
   // After end
 });
 
