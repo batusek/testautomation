@@ -1,18 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
 export default defineConfig({
   testDir: '.',
-    forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: 3,
-  fullyParallel: true,
+  // After start
+  forbidOnly: !!process.env.CI,
+  workers: 1,
   reporter: 'list',
   use: {
-    baseURL: 'https://openstreetmap.org/',
-    // headless: false,
+    headless: false,
+    trace: 'on-first-retry'
   },
 
   /* Configure projects for major browsers */
@@ -26,4 +22,5 @@ export default defineConfig({
       dependencies: ['setup']
     },
   ],
+  // After end
 });
