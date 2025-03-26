@@ -29,42 +29,16 @@ export class Geocoder {
     }
 }
 
-// After start
-export class GeocoderSimulator extends Geocoder {
-    private coordinates: { [key: string]: [number, number] };
-
-    constructor(coordinates: { [key: string]: [number, number] }) {
-        super();
-        this.coordinates = coordinates;
-    }
-
-    async geocode(city_name: string): Promise<[number, number]> {
-        return this.coordinates[city_name] || [0, 0];
-    }
-}
-// After end
 
 export class GeoUtils {
-    // After start
-    private geocoder: Geocoder;
-    // After end
     private static EARTH_RADIUS_KM = 6371;
 
-    // After start
-    constructor(geocoder: Geocoder) {
-        this.geocoder = geocoder;
-    }
-    // After end
 
     async distance(city1: string, city2: string): Promise<number> {
-        // Uncomment:       let geocoder = new Geocoder();
-        // Uncomment:       const [lat1, lon1] = await geocoder.geocode(city1);
-        // Uncomment:       const [lat2, lon2] = await geocoder.geocode(city2);
+       let geocoder = new Geocoder();
+       const [lat1, lon1] = await geocoder.geocode(city1);
+       const [lat2, lon2] = await geocoder.geocode(city2);
 
-        // After start
-        const [lat1, lon1] = await this.geocoder.geocode(city1);
-        const [lat2, lon2] = await this.geocoder.geocode(city2);
-        // After end
         
         const dLat = this.toRadians(lat2 - lat1);
         const dLon = this.toRadians(lon2 - lon1);
