@@ -1,0 +1,13 @@
+{
+    "default": {
+        "formatOptions": {
+            "snippetInterface": "synchronous"
+        },
+        "requireModule": [
+            "ts-node/register"
+        ],
+        "require": [
+            "cucumber_intro/features/step_definitions/*.ts"
+        ]
+    }
+}

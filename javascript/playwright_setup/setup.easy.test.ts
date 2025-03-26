@@ -8,7 +8,8 @@ test('search returns results', async( {page} ) => {
 
   const search_button = await page.getByRole("button", { name: "Go"} );
   search_button.click();
-
+  // Excerpt end
+  // After end
   const results = await page.locator('#sidebar_content');
   await expect(results).not.toBeEmpty();
   await expect(results.textContent).toBeDefined();

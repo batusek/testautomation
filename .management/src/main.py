@@ -1,4 +1,28 @@
 import shutil
+from typing import TextIO
+
+
+def adaptFile(filename: str):
+    with open(filename, "r") as f:
+        lines = f.readlines()
+
+    with open(filename, "w") as f:
+        writeLine = True
+        for i, line in enumerate(lines):
+            if "After start" in line:
+                writeLine = False
+
+            if "After end" in line:
+                writeLine = True
+                continue
+
+            if "Uncomment" in line:
+                components = line.split(":")
+                f.write(":".join(components[1:]))
+                continue
+
+            if writeLine:
+                f.write(line)
 
 
 def removeLines(filename: str, start: int, end: int):
@@ -13,17 +37,44 @@ def removeLines(filename: str, start: int, end: int):
             if i > end:
                 f.write(line)
 
-def insertLines(filename: str, start: int, excerpt: list[str]):
+
+def insertExcerpt(f: TextIO, excerpt: list[str]):
+    for l in excerpt:
+        f.write(l)
+
+def insertExcerpts(filename: str, excerpt: list[str]):
     with open(filename, "r") as f:
         lines = f.readlines()
 
     with open(filename, "w") as f:
-        for i, line in enumerate(lines):
-            if i == start:
-                for l in excerpt:
-                    f.write(l)
+        for line in lines:
+            if "Excerpt" in line:
+                insertExcerpt(f, excerpt)
+                continue
 
             f.write(line)
+
+
+def extractExcerpt(filename: str) -> list[str]:
+    with open(filename, "r") as f:
+        lines = list(f.readlines())
+
+    result = []
+    inExcerpt = False
+    for line in lines:
+        if "Excerpt start" in line:
+            inExcerpt = True
+            continue
+
+        if "Excerpt end" in line:
+            inExcerpt = False
+            continue
+
+        if inExcerpt:
+            result.append(line)
+
+    return result
+
 
 
 def python():
@@ -32,38 +83,29 @@ def python():
     shutil.copy("../python/practice1_intro/practice1.py", "../python/practice2_locators/practice2.py")
     removeLines("../python/practice4_parallel/instructions.txt", 5, 10)
 
-def javaScript():
-    removeLines("../javascript/practice1_intro/practice1.test.ts", 5, 6)
-    removeLines("../javascript/practice2_locators/practice2.test.ts", 15, 24)
-    removeLines("../javascript/practice2_locators/practice2.test.ts", 5, 9)
+def typeScript():
+    adaptFile("../javascript/cucumber_intro/features/calculator.feature")
+    adaptFile("../javascript/cucumber_intro/features/step_definitions/calculator.ts")
 
-    with open("../javascript/practice3_setup/setup.ts", "r") as f:
-        lines = list(f.readlines())
+    adaptFile("../javascript/cucumber_with_playwright/features/maps.feature")
+    adaptFile("../javascript/cucumber_with_playwright/step_definitions/maps.ts")
 
-    excerpt = lines[3:-1] + ["\n"]
-    exercise3 = "../javascript/practice3_setup/practice3.test.ts"
-    insertLines(exercise3,21,excerpt)
-    insertLines(exercise3,10,excerpt)
-    insertLines(exercise3,3,excerpt)
+    adaptFile("../javascript/playwright_intro/intro.test.ts")
+    adaptFile("../javascript/playwright_locators/locators.test.ts")
 
-    exercise3easy = "../javascript/practice3_setup/practice3.easy.test.ts"
-    with open(exercise3easy, "r") as f:
-        lines = list(f.readlines())
+    excerpt = extractExcerpt("../javascript/playwright_setup/setup.ts")
+    insertExcerpts("../javascript/playwright_setup/setup.test.ts",excerpt)
+    adaptFile("../javascript/playwright_setup/setup.ts")
+    excerpt = extractExcerpt("../javascript/playwright_setup/setup.easy.test.ts")
+    adaptFile("../javascript/playwright_setup/setup.easy.test.ts")
+    insertExcerpts("../javascript/playwright_setup/setup.easy.test.ts",excerpt)
 
-    excerpt = lines[3:10] + ["\n"]
-    insertLines(exercise3easy,20,excerpt)
-    insertLines(exercise3easy,14,excerpt)
-    removeLines(exercise3easy, 2,12)
+    adaptFile("../javascript/playwright_parallel/playwright.config.solution.ts")
+    adaptFile("../javascript/playwright_retry/playwright.config.solution.ts")
+    adaptFile("../javascript/playwright_setup/playwright.config.solution.ts")
 
+    adaptFile("../javascript/playwright_external/geocode.ts")
+    adaptFile("../javascript/playwright_external/geocode.test.ts")
 
-    removeLines("../javascript/practice3_setup/playwright.config.ts", 23, 23)
-    removeLines("../javascript/practice3_setup/playwright.config.ts", 21, 21)
-    removeLines("../javascript/practice3_setup/playwright.config.ts", 17, 17)
-    removeLines("../javascript/practice3_setup/setup.ts", 3, 16)
-
-    shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice4_parallel/playwright.config.ts")
-    shutil.copy("../javascript/practice1_intro/playwright.config.ts", "../javascript/practice5_retry/playwright.config.ts")
-
-python()
-javaScript()
-
+# python()
+typeScript()

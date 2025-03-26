@@ -18,4 +18,5 @@ Unfortunately, developing in a container, forces you to use a headless browser (
 
 1. Install nvm: https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows
 2. nvm install latest
-3. npx playwright install chromium
+3. npm insall playwright
+4. npx playwright install chromium
