@@ -3,10 +3,8 @@
         "formatOptions": {
             "snippetInterface": "synchronous"
         },
-        "requireModule": [
-            "ts-node/register"
-        ],
-        "require": [
+        "loader": ["ts-node/esm"],
+        "import": [
             "cucumber_intro/features/step_definitions/*.ts"
         ]
     }
