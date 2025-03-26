@@ -3,10 +3,8 @@
         "formatOptions": {
             "snippetInterface": "synchronous"
         },
-        "requireModule": [
-            "ts-node/register"
-        ],
-        "require": [
+        "loader": ["ts-node/esm"],
+        "import": [
             "cucumber_with_playwright/step_definitions/*.ts"
         ]
     }
