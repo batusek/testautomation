@@ -1,20 +1,17 @@
-import { Before, After, Given, Then } from '@cucumber/cucumber';
+import { Before, After, Given, Then, setDefaultTimeout } from '@cucumber/cucumber';
 import { chromium } from 'playwright';
 import { expect } from '@playwright/test';
 
+setDefaultTimeout(60000); 
 
 Before(async function () {
-// After start
-    this.browser = await chromium.launch();
+    this.browser = await chromium.launch({ timeout: 20000 });
     this.page = await this.browser.newPage();
-// After end
 });
   
 After(async function () {
-// After start
     await this.page.close();
     await this.browser.close();
-// After end
 });
 
 Given('the map page is open', async function () {
