@@ -9,6 +9,7 @@ Background:
     Then the statement should be sent by "email"
 
 
+  # After start
   Scenario Outline: Change statement distribution 
     Given account with statement distribution by "<oldMode>"
     When I change the distribution to "<newMode>"
@@ -26,3 +27,4 @@ Background:
         | post    | post    | post    |       |
         | IB      | IB      | IB      |       |
         | email   | email   | email   |       |
+    #After end
