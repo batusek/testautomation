@@ -10,5 +10,5 @@ Feature: Inflation impact to my savings
     Examples:
       | savings | inflation | years | result |
       | 10000    | 0         | 1     | 10000   |
-      # | 10000    | 1         | 1     | 9901    |
-      # | 1000     | 1         | 1     | 9901    |
+      | 10000    | 1         | 1     | 9901    |
+      | 1000     | 1         | 1     | 9901    |

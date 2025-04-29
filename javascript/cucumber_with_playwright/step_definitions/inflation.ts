@@ -23,8 +23,8 @@ When('I calculate the impact of inflation on my savings', async function () {
 
 Then('value of my savings after all those years is {string}', async function (result) {
   const actual = await this.page.getByTestId("RAemInvestmentCalculator--result-savings-after");
-  actual.click();
-  await this.page.waitForTimeout(5000);
+  actual.click();  // have the value recalculated 
+  await this.page.waitForTimeout(1000);
   let resultText = await actual.textContent(); 
   resultText = resultText?.replace(/\u00A0/g, ''); // Remove non-breaking spaces
   expect(resultText?.trim()).toContain(result);
