@@ -5,7 +5,7 @@ import { expect } from '@playwright/test';
 setDefaultTimeout(60000); 
 
 Before(async function () {
-    this.browser = await chromium.launch({ timeout: 20000 });
+    this.browser = await chromium.launch({ timeout: 20000, headless: false });
     this.page = await this.browser.newPage();
 });
   
