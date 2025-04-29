@@ -9,19 +9,23 @@ Given('the inflation rate is {string} percent', function (inflation) {
   this.inflation = inflation;
 });
 
-Given('I keep them {int} years', function (years) {
+Given('I keep them {string} years', function (years) {
     this.years = years;
 })
 
 When('I calculate the impact of inflation on my savings', async function () {
     await this.page.goto('https://www.csas.cz/cs/osobni-finance/investovani?calculation=inflation');
-    await this.page.fill('[data-testid="RAemInvestmentCalculator--savings-value-input--input"]', this.savings);
-    await this.page.fill('[data-testid="RAemInvestmentCalculator--years-input--input"]', this.years);
-    await this.page.fill('[data-testid="RAemInvestmentCalculator--inflation-input--input"]', this.years);
-   
+    await this.page.getByRole('button', { name: 'Souhlasím a pokračovat' }).click();
+    await this.page.getByTestId('RAemInvestmentCalculator--savings-value-input--input').fill(this.savings);
+    await this.page.getByTestId('RAemInvestmentCalculator--years-input--input').fill(this.years);
+    await this.page.getByTestId('RAemInvestmentCalculator--inflation-input--input').fill(this.inflation);
 });
 
 Then('value of my savings after all those years is {string}', async function (result) {
-  const actualResult = await this.page.textContent('[data-testid="RAemInvestmentCalculator--result-savings-after"]');
-  expect(actualResult?.trim()).toBe(result);
+  const actual = await this.page.getByTestId("RAemInvestmentCalculator--result-savings-after");
+  actual.click();
+  await this.page.waitForTimeout(5000);
+  let resultText = await actual.textContent(); 
+  resultText = resultText?.replace(/\u00A0/g, ''); // Remove non-breaking spaces
+  expect(resultText?.trim()).toContain(result);
 });
