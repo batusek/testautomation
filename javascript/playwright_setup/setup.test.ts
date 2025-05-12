@@ -7,15 +7,13 @@ test('map exists', async ( {page} ) => {
 
   const password = await page.getByRole("textbox", { name:"password"} );
   await password.fill("xxx");
-  // await page.waitForTimeout(500);
   
-  const authFile = '.auth/user.json';
-  await page.context().storageState({ path: authFile });
-
   // const login = await page.locator("[type=submit]");
   const login = await page.getByRole("button", { name: "Log in"} );
   await login.click();
 
+  const authFile = '.auth/user.json';
+  await page.context().storageState({ path: authFile });
   await page.goto('https://openstreetmap.org/');
 
   const map = await page.locator("#map")
@@ -29,15 +27,13 @@ test('explore locators', async( {page} ) => {
 
   const password = await page.getByRole("textbox", { name:"password"} );
   await password.fill("xxx");
-  // await page.waitForTimeout(500);
   
-  const authFile = '.auth/user.json';
-  await page.context().storageState({ path: authFile });
-
   // const login = await page.locator("[type=submit]");
   const login = await page.getByRole("button", { name: "Log in"} );
   await login.click();
 
+  const authFile = '.auth/user.json';
+  await page.context().storageState({ path: authFile });
   await page.goto('https://openstreetmap.org/');
   
   const heading = await page.getByRole("heading", {name: "OpenStreetMap logo"});
@@ -55,15 +51,13 @@ test('search returns results', async( {page} ) => {
 
   const password = await page.getByRole("textbox", { name:"password"} );
   await password.fill("xxx");
-  // await page.waitForTimeout(500);
   
-  const authFile = '.auth/user.json';
-  await page.context().storageState({ path: authFile });
-
   // const login = await page.locator("[type=submit]");
   const login = await page.getByRole("button", { name: "Log in"} );
   await login.click();
 
+  const authFile = '.auth/user.json';
+  await page.context().storageState({ path: authFile });
   await page.goto('https://openstreetmap.org/');
     
   // const search_bar = await page.locator("#query");
