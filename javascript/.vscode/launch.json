@@ -95,5 +95,14 @@
             "runtimeArgs": ["run", "test2"],
             "console": "integratedTerminal"
         },
-   ]
+        {
+            "name": "Run playwright debug",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_debug",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+    ]
 }
