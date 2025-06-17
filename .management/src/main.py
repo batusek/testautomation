@@ -88,6 +88,8 @@ def python():
     removeLines("../python/practice4_parallel/instructions.txt", 5, 10)
 
 def typeScript():
+    adaptFile("javascript/gherkin/features/atm.feature")
+
     adaptFile("javascript/cucumber_intro/features/calculator.feature")
     adaptFile("javascript/cucumber_intro/features/step_definitions/calculator.ts")
     adaptFile("javascript/cucumber_intro/features/statement.feature")
