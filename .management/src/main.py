@@ -47,14 +47,10 @@ def insertExcerpt(f: TextIO, excerpt: list[str]):
         f.write(l)
 
 def insertExcerpts(filename: str, excerpt: list[str]):
-    src:str = f"../../.samples/{filename}"
-    target:str = f"../../{filename}"
-    shutil.copy(src, target)
-
-    with open(target, "r") as f:
+    with open(filename, "r") as f:
         lines = f.readlines()
 
-    with open(target, "w") as f:
+    with open(filename, "w") as f:
         for line in lines:
             if "Excerpt" in line:
                 insertExcerpt(f, excerpt)
@@ -64,11 +60,7 @@ def insertExcerpts(filename: str, excerpt: list[str]):
 
 
 def extractExcerpt(filename: str) -> list[str]:
-    src:str = f"../../.samples/{filename}"
-    target:str = f"../../{filename}"
-    shutil.copy(src, target)
-
-    with open(target, "r") as f:
+    with open(filename, "r") as f:
         lines = list(f.readlines())
 
     result = []
@@ -107,12 +99,13 @@ def typeScript():
     adaptFile("javascript/playwright_intro/intro.test.ts")
     adaptFile("javascript/playwright_locators/locators.test.ts")
 
-    excerpt = extractExcerpt("javascript/playwright_setup/setup.ts")
-    insertExcerpts("javascript/playwright_setup/setup.test.ts",excerpt)
+    excerpt = extractExcerpt("../../.samples/javascript/playwright_setup/setup.ts")
+    adaptFile("javascript/playwright_setup/setup.test.ts")
+    insertExcerpts("../../javascript/playwright_setup/setup.test.ts",excerpt)
     adaptFile("javascript/playwright_setup/setup.ts")
-    excerpt = extractExcerpt("javascript/playwright_setup/setup.easy.test.ts")
+    excerpt = extractExcerpt("../../.samples/javascript/playwright_setup/setup.easy.test.ts")
     adaptFile("javascript/playwright_setup/setup.easy.test.ts")
-    insertExcerpts("javascript/playwright_setup/setup.easy.test.ts",excerpt)
+    insertExcerpts("../../javascript/playwright_setup/setup.easy.test.ts",excerpt)
 
     adaptFile("javascript/playwright_parallel/playwright.config.solution.ts")
     adaptFile("javascript/playwright_retry/playwright.config.solution.ts")
