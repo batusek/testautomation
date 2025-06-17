@@ -89,6 +89,7 @@ def python():
 
 def typeScript():
     adaptFile("javascript/gherkin/features/atm.feature")
+    adaptFile("javascript/gherkin/features/history.feature")
 
     adaptFile("javascript/cucumber_intro/features/calculator.feature")
     adaptFile("javascript/cucumber_intro/features/step_definitions/calculator.ts")
