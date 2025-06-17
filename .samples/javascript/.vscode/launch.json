@@ -1,0 +1,108 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run playwright intro",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_intro",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test", "--debug"],
+            "console": "integratedTerminal",
+            "env": { "DEBUG": "pw:api" }
+        },
+        {
+            "name": "Run playwright locators",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_locators",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run playwright concepts",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_concepts",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run playwright setup",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_setup",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run playwright parallel",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_parallel",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run playwright retry",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_retry",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run playwright external",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_external",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run codegen",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_intro",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "codegen"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run cucumber intro",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["test"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run cucumber with playwright",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "test2"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run playwright debug",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_debug",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": ["playwright", "test"],
+            "console": "integratedTerminal"
+        },
+    ]
+}

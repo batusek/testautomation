@@ -1,0 +1,1 @@
+from .practice2 import OpenStreetMapTest

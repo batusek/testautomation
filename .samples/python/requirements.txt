@@ -1,0 +1,2 @@
+playwright==1.45.1
+unittest-parallel==1.6.1

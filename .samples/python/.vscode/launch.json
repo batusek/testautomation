@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Run first exercise",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/practice1_intro/practice1.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run second exercise",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/practice2_locators/practice2.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run third exercise",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/practice3_setup/practice3.py",
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "Run fourth exercise serial",
+            "type": "debugpy",
+            "request": "launch",
+            "args": ["discover","practice4_parallel"],
+            "module": "unittest",
+            "cwd": "${workspaceFolder}/",
+            "console": "integratedTerminal"
+        },        
+    ]
+}
