@@ -108,11 +108,11 @@ def typeScript():
     adaptFile("javascript/playwright_bdd/features/statement.feature")
     adaptFile("javascript/playwright_bdd/steps/statement.ts")
     adaptFile("javascript/playwright_bdd/features/calculator.feature")
-    adaptFile("javascript/playwright_bdd/features/step_definitions/calculator.ts")
+    adaptFile("javascript/playwright_bdd/steps/calculator.ts")
     adaptFile("javascript/playwright_bdd/features/inflation.feature")
-    adaptFile("javascript/playwright_bdd/features/step_definitions/inflation.ts")
+    adaptFile("javascript/playwright_bdd/steps/inflation.ts")
     adaptFile("javascript/playwright_bdd/features/maps.feature")
-    adaptFile("javascript/playwright_bdd/features/step_definitions/maps.ts")
+    adaptFile("javascript/playwright_bdd/steps/maps.ts")
 
 
     adaptFile("javascript/playwright_intro/intro.test.ts")
