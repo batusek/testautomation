@@ -96,6 +96,8 @@ def typeScript():
     adaptFile("javascript/cucumber_intro/features/step_definitions/calculator.ts")
     adaptFile("javascript/cucumber_intro/features/statement.feature")
     adaptFile("javascript/cucumber_intro/features/step_definitions/statement.ts")
+    adaptFile("javascript/cucumber_intro/features/calculator.feature")
+    adaptFile("javascript/cucumber_intro/features/step_definitions/calculator.ts")
 
     adaptFile("javascript/cucumber_with_playwright/features/maps.feature")
     adaptFile("javascript/cucumber_with_playwright/step_definitions/maps.ts")
