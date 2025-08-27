@@ -3,8 +3,8 @@ from typing import TextIO
 
 
 def adaptFile(filename: str):
-    src:str = f"../../.samples/{filename}"
-    target:str = f"../../{filename}"
+    src:str = f"../.samples/{filename}"
+    target:str = f"../{filename}"
     shutil.copy(src, target)
 
     with open(target, "r") as f:
@@ -100,16 +100,22 @@ def typeScript():
     adaptFile("javascript/cucumber_with_playwright/features/maps.feature")
     adaptFile("javascript/cucumber_with_playwright/step_definitions/maps.ts")
 
+    adaptFile("javascript/playwright_bdd/playwright.config.ts")
+    adaptFile("javascript/playwright_bdd/steps/fixtures.ts")
+    adaptFile("javascript/playwright_bdd/features/statement.feature")
+    adaptFile("javascript/playwright_bdd/steps/statement.ts")
+
+
     adaptFile("javascript/playwright_intro/intro.test.ts")
     adaptFile("javascript/playwright_locators/locators.test.ts")
 
-    excerpt = extractExcerpt("../../.samples/javascript/playwright_setup/setup.ts")
+    excerpt = extractExcerpt("../.samples/javascript/playwright_setup/setup.ts")
     adaptFile("javascript/playwright_setup/setup.test.ts")
-    insertExcerpts("../../javascript/playwright_setup/setup.test.ts",excerpt)
+    insertExcerpts("../javascript/playwright_setup/setup.test.ts",excerpt)
     adaptFile("javascript/playwright_setup/setup.ts")
-    excerpt = extractExcerpt("../../.samples/javascript/playwright_setup/setup.easy.test.ts")
+    excerpt = extractExcerpt("../.samples/javascript/playwright_setup/setup.easy.test.ts")
     adaptFile("javascript/playwright_setup/setup.easy.test.ts")
-    insertExcerpts("../../javascript/playwright_setup/setup.easy.test.ts",excerpt)
+    insertExcerpts("../javascript/playwright_setup/setup.easy.test.ts",excerpt)
 
     adaptFile("javascript/playwright_parallel/playwright.config.solution.ts")
     adaptFile("javascript/playwright_retry/playwright.config.solution.ts")
