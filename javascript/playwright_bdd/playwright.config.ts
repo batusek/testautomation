@@ -2,7 +2,7 @@ import { defineConfig } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
 
 const testDir = defineBddConfig({
-  features: 'statement.feature',
+  features: '*.feature',
   steps: '*.ts',
 });
 
