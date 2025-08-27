@@ -6,14 +6,16 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js cucumber_intro/ --config cucumber_intro/cucumber.json",
-    "test2": "cucumber-js cucumber_with_playwright/ --config cucumber_with_playwright/cucumber.json"
+    "test2": "cucumber-js cucumber_with_playwright/ --config cucumber_with_playwright/cucumber.json",
+    "playwright-bdd": "cd playwright_bdd/ && npx bddgen && npx playwright test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^11.2.0",
-    "@playwright/test": "^1.51.1",
-    "@types/node": "^22.1.0"
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.1.0",
+    "playwright-bdd": "^8.4.0"
   }
 }
