@@ -96,6 +96,15 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "Run playwright-bdd",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/playwright_bdd",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "playwright-bdd"],
+            "console": "integratedTerminal"
+            }
+        {
             "name": "Run playwright debug",
             "type": "node",
             "request": "launch",
