@@ -98,18 +98,21 @@ def typeScript():
     adaptFile("javascript/cucumber_intro/features/step_definitions/statement.ts")
     adaptFile("javascript/cucumber_intro/features/calculator.feature")
     adaptFile("javascript/cucumber_intro/features/step_definitions/calculator.ts")
-    adaptFile("javascript/cucumber_intro/features/inflation.feature")
-    adaptFile("javascript/cucumber_intro/features/step_definitions/inflation.ts")
-    adaptFile("javascript/cucumber_intro/features/maps.feature")
-    adaptFile("javascript/cucumber_intro/features/step_definitions/maps.ts")
 
     adaptFile("javascript/cucumber_with_playwright/features/maps.feature")
     adaptFile("javascript/cucumber_with_playwright/step_definitions/maps.ts")
 
     adaptFile("javascript/playwright_bdd/playwright.config.ts")
+    adaptFile("javascript/playwright_bdd/instructions.md")
     adaptFile("javascript/playwright_bdd/steps/fixtures.ts")
     adaptFile("javascript/playwright_bdd/features/statement.feature")
     adaptFile("javascript/playwright_bdd/steps/statement.ts")
+    adaptFile("javascript/playwright_bdd/features/calculator.feature")
+    adaptFile("javascript/playwright_bdd/features/step_definitions/calculator.ts")
+    adaptFile("javascript/playwright_bdd/features/inflation.feature")
+    adaptFile("javascript/playwright_bdd/features/step_definitions/inflation.ts")
+    adaptFile("javascript/playwright_bdd/features/maps.feature")
+    adaptFile("javascript/playwright_bdd/features/step_definitions/maps.ts")
 
 
     adaptFile("javascript/playwright_intro/intro.test.ts")
