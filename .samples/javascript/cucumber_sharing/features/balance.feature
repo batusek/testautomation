@@ -1,6 +1,5 @@
 Feature: Account Balance Check
 In order to view my primary accounts
-As an authenticated bank customer
 I want to check my current balance details
 
 Background: System Preconditions

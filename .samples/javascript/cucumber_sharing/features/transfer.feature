@@ -1,11 +1,9 @@
 Feature: Funds Transfer
 In order to manage my money efficiently
-As an authenticated bank customer
 I want to move funds between my accounts
 
 Background: System Preconditions
-# This step is identical to the one in the other feature file,
-# but the actual TypeScript code is only written once.
+# This complex step initializes the global list of account types (e.g., Checking, Savings)
 Given the banking system has initialized core account product types
 And "John Smith" is logged in with credentials "john_pass456"
 
