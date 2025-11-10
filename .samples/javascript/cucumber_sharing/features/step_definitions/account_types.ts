@@ -23,26 +23,30 @@ Given('{string} is logged in with credentials {string}', function (username: str
 });
 
 
+// Create a unique key for the user's account
+function getAccountKey(user: string, accountName: string) {
+  return `${user}-${accountName}`;
+}
+
 // --- Scenario 1 Steps (Balance Check) ---
 
 Given('{string} has a {string} account with a balance of {float}', function (user: string, accountName: string, balance: number) {
   if (user !== currentUser) throw new Error('Cannot set balance for unauthenticated user.');
   
-  // Create a unique key for the user's account
-  const accountKey = `${user}-${accountName}`;
+  const accountKey = getAccountKey(user, accountName);
   userAccountBalances.set(accountKey, balance);
 });
 
 When('{string} checks the {string} account balance', function (user: string, accountName: string) {
-  this.accountToCheck = `${user}-${accountName}`;
+  this.accountToCheck = getAccountKey(user, accountName);
 });
 
 
 // --- Scenario 2 Steps (Funds Transfer) ---
 
 When('{string} transfers {float} from {string} to {string}', function (user: string, amount: number, sourceAccountName: string, targetAccountName: string) {
-  const sourceKey = `${user}-${sourceAccountName}`;
-  const targetKey = `${user}-${targetAccountName}`;
+  const sourceKey = getAccountKey(user, sourceAccountName);
+  const targetKey = getAccountKey(user, targetAccountName);
 
   let sourceBalance = userAccountBalances.get(sourceKey) || 0;
   let targetBalance = userAccountBalances.get(targetKey) || 0;
@@ -59,7 +63,7 @@ When('{string} transfers {float} from {string} to {string}', function (user: str
 });
 
 Then('the {string} account balance should be {float}', function (accountName: string, expectedBalance: number) {
-  const accountKey = `${currentUser}-${accountName}`;
+  const accountKey = getAccountKey(currentUser, accountName);
   const actualBalance = userAccountBalances.get(accountKey);
   
   assert.strictEqual(actualBalance, expectedBalance, 
