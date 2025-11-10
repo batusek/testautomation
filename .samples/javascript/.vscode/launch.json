@@ -96,6 +96,15 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "Run cucumber sharing",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run","test3"],
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Run playwright-bdd",
             "type": "node",
             "request": "launch",
@@ -103,7 +112,7 @@
             "runtimeExecutable": "npm",
             "runtimeArgs": ["run", "playwright-bdd"],
             "console": "integratedTerminal"
-            }
+        },
         {
             "name": "Run playwright debug",
             "type": "node",
@@ -112,6 +121,6 @@
             "runtimeExecutable": "npx",
             "runtimeArgs": ["playwright", "test"],
             "console": "integratedTerminal"
-        },
+        }
     ]
 }

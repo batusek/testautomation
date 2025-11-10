@@ -7,6 +7,7 @@
   "scripts": {
     "test": "cucumber-js cucumber_intro/ --config cucumber_intro/cucumber.json",
     "test2": "cucumber-js cucumber_with_playwright/ --config cucumber_with_playwright/cucumber.json",
+    "test3": "cucumber-js cucumber_sharing/ --config cucumber_sharing/cucumber.json",
     "playwright-bdd": "cd playwright_bdd/ && npx bddgen && npx playwright test"
   },
   "keywords": [],
@@ -17,5 +18,8 @@
     "@playwright/test": "^1.55.0",
     "@types/node": "^22.1.0",
     "playwright-bdd": "^8.4.0"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2"
   }
 }
