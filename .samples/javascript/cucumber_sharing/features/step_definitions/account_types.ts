@@ -2,20 +2,14 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import * as assert from 'assert';
 
 // --- Shared Global State (The "Database") ---
-
 const accountProducts: { id: string; name: string }[] = [];
-
-// Map to hold simple user account balances for the current scenario
 const userAccountBalances: Map<string, number> = new Map();
-
-// Global variable to simulate the current user authenticated in the system
 let currentUser: string;
 
-// --- STEP IMPLEMENTATIONS ---
+// --- SHARED STEPS IMPLEMENTATIONS ---
 
-// The single, complex, and shared Background step
+// Initialize the shared database structure
 Given('the banking system has initialized core account product types', function () {
-  // 1. Initialize the shared database structure
   accountProducts.push(
     { id: 'CUR', name: 'Current' },
     { id: 'CHK', name: 'Checking' },
@@ -54,8 +48,6 @@ Then('the displayed balance should be {string}', function (expectedBalanceString
   
   assert.strictEqual(actualBalanceString, expectedBalanceString, 
     `Expected balance to be ${expectedBalanceString} but found ${actualBalanceString}`);
-  
-  console.log(`Verification: Balance matched expected value: ${expectedBalanceString}`);
 });
 
 // --- Scenario 2 Steps (Funds Transfer) ---
@@ -76,8 +68,6 @@ When('{string} transfers {float} from {string} to {string}', function (user: str
   // Update mock balances
   userAccountBalances.set(sourceKey, sourceBalance);
   userAccountBalances.set(targetKey, targetBalance);
-  
-  console.log(`Action: Transferred ${amount} from ${sourceAccountName} to ${targetAccountName}`);
 });
 
 Then('the {string} account balance should be {float}', function (accountName: string, expectedBalance: number) {
@@ -86,6 +76,4 @@ Then('the {string} account balance should be {float}', function (accountName: st
   
   assert.strictEqual(actualBalance, expectedBalance, 
     `Expected ${accountName} balance to be ${expectedBalance} but was ${actualBalance}`);
-  
-  console.log(`Verification: ${accountName} balance is now ${actualBalance}`);
 });
