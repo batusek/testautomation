@@ -20,7 +20,6 @@ Given('the banking system has initialized core account product types', function 
 // Authentication Step (Shared across scenarios)
 Given('{string} is logged in with credentials {string}', function (username: string, password: string) {
   currentUser = username;
-  console.log(`Mock: User '${currentUser}' authenticated successfully.`);
 });
 
 
@@ -32,11 +31,9 @@ Given('{string} has a {string} account with a balance of {float}', function (use
   // Create a unique key for the user's account
   const accountKey = `${user}-${accountName}`;
   userAccountBalances.set(accountKey, balance);
-  console.log(`Setup: ${accountName} balance set to ${balance}`);
 });
 
 When('{string} checks the {string} account balance', function (user: string, accountName: string) {
-  // Mocking the action of checking the balance
   this.accountToCheck = `${user}-${accountName}`;
 });
 
@@ -66,7 +63,7 @@ When('{string} transfers {float} from {string} to {string}', function (user: str
   sourceBalance -= amount;
   targetBalance += amount;
 
-  // Update mock balances
+  // Update balances
   userAccountBalances.set(sourceKey, sourceBalance);
   userAccountBalances.set(targetKey, targetBalance);
 });
