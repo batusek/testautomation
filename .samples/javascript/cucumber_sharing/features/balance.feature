@@ -12,4 +12,4 @@ And "Jane Doe" is logged in with credentials "jane_pass123"
 Scenario: Verify balance of a Checking account
 Given "Jane Doe" has a "Checking" account with a balance of 1500.50
 When "Jane Doe" checks the "Checking" account balance
-Then the displayed balance should be "$1,500.50"
+Then the "Checking" account balance should be 1500.50

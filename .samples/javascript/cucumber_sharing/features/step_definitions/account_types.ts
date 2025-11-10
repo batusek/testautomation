@@ -37,16 +37,6 @@ When('{string} checks the {string} account balance', function (user: string, acc
   this.accountToCheck = `${user}-${accountName}`;
 });
 
-Then('the displayed balance should be {string}', function (expectedBalanceString: string) {
-  const accountBalance = userAccountBalances.get(this.accountToCheck);
-  
-  // Formatting for comparison
-  const actualBalanceString = `$${accountBalance?.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
-  
-  assert.strictEqual(actualBalanceString, expectedBalanceString, 
-    `Expected balance to be ${expectedBalanceString} but found ${actualBalanceString}`);
-});
-
 
 // --- Scenario 2 Steps (Funds Transfer) ---
 
