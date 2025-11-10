@@ -50,6 +50,7 @@ Then('the displayed balance should be {string}', function (expectedBalanceString
     `Expected balance to be ${expectedBalanceString} but found ${actualBalanceString}`);
 });
 
+
 // --- Scenario 2 Steps (Funds Transfer) ---
 
 When('{string} transfers {float} from {string} to {string}', function (user: string, amount: number, sourceAccountName: string, targetAccountName: string) {
