@@ -1,6 +1,6 @@
 Explore playwright concepts
-1. Switch to headless browsing - modify playwright.config.ts 
-2. Different reporters - modify playwright.config.ts 
+1. Switch to headless browsing - modify `playwright.runsettings`
+2. Different reporters - modify `playwright.runsettings`
 3. Mark one test as skipped
 4. Set timeout for tests
 5. Set a breakpoint in a test and run it in a debug mode in VS Code
