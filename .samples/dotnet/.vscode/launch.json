@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run playwright intro",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "dotnet",
+            "args": ["test", "${workspaceFolder}/playwright_intro/PlaywrightIntro.csproj"],
+            "cwd": "${workspaceFolder}/playwright_intro",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run playwright locators",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-locators",
+            "program": "dotnet",
+            "args": ["test", "${workspaceFolder}/playwright_locators/PlaywrightLocators.csproj"],
+            "cwd": "${workspaceFolder}/playwright_locators",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run playwright concepts",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-concepts",
+            "program": "dotnet",
+            "args": ["test", "${workspaceFolder}/playwright_concepts/PlaywrightConcepts.csproj"],
+            "cwd": "${workspaceFolder}/playwright_concepts",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run all tests",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-all",
+            "program": "dotnet",
+            "args": ["test", "${workspaceFolder}/dotnet.sln", "--settings", "${workspaceFolder}/playwright.runsettings"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

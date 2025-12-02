@@ -14,13 +14,6 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# Visual Studio cache/options
-.vs/
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
 # Test Results
 [Tt]est[Rr]esult*/
@@ -57,10 +50,6 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# VS Code directories
-.vscode/
-!.vscode/tasks.json
-!.vscode/launch.json
 
 # .NET
 *.swp
