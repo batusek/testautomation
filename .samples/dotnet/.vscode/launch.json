@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             "program": "dotnet",
-            "args": ["test", "${workspaceFolder}/playwright_intro/PlaywrightIntro.csproj"],
+            "args": ["test", "${workspaceFolder}/playwright_intro/PlaywrightIntro.csproj", "--settings", "${workspaceFolder}/playwright.runsettings"],
             "cwd": "${workspaceFolder}/playwright_intro",
             "console": "integratedTerminal"
         },
@@ -20,7 +20,7 @@
             "request": "launch",
             "preLaunchTask": "build-locators",
             "program": "dotnet",
-            "args": ["test", "${workspaceFolder}/playwright_locators/PlaywrightLocators.csproj"],
+            "args": ["test", "${workspaceFolder}/playwright_locators/PlaywrightLocators.csproj", "--settings", "${workspaceFolder}/playwright.runsettings"],
             "cwd": "${workspaceFolder}/playwright_locators",
             "console": "integratedTerminal"
         },
@@ -30,7 +30,7 @@
             "request": "launch",
             "preLaunchTask": "build-concepts",
             "program": "dotnet",
-            "args": ["test", "${workspaceFolder}/playwright_concepts/PlaywrightConcepts.csproj"],
+            "args": ["test", "${workspaceFolder}/playwright_concepts/PlaywrightConcepts.csproj", "--settings", "${workspaceFolder}/playwright.runsettings"],
             "cwd": "${workspaceFolder}/playwright_concepts",
             "console": "integratedTerminal"
         },
@@ -40,7 +40,7 @@
             "request": "launch",
             "preLaunchTask": "build-setup",
             "program": "dotnet",
-            "args": ["test", "${workspaceFolder}/playwright_setup/PlaywrightSetup.csproj"],
+            "args": ["test", "${workspaceFolder}/playwright_setup/PlaywrightSetup.csproj", "--settings", "${workspaceFolder}/playwright.runsettings"],
             "cwd": "${workspaceFolder}/playwright_setup",
             "console": "integratedTerminal"
         },

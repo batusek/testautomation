@@ -17,16 +17,18 @@ public class SetupTests : PageTest
     }
 
     [TestMethod]
-    public async Task ExploreLocators()
+    public async Task LoginButtonPresent()
     {
         // Excerpt
         await Page.GotoAsync("https://openstreetmap.org/");
         
-        var heading = Page.GetByRole(AriaRole.Heading, new() { Name = "OpenStreetMap logo" });
-        await Expect(heading).ToBeVisibleAsync();
-
-        var search = Page.GetByText("History");
-        await Expect(search).ToHaveAttributeAsync("href", "/history");
+        // Find the button with username class inside it
+        var loginButton = Page.Locator("button:has(.username)");
+        await Expect(loginButton).ToBeVisibleAsync();
+        
+        // Verify the username text is present
+        var username = loginButton.Locator(".username");
+        await Expect(username).ToHaveTextAsync("TestAutomationUser");
     }
 
     [TestMethod]
