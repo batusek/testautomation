@@ -26,7 +26,7 @@ public class SetupTests : PageTest
         await Expect(heading).ToBeVisibleAsync();
 
         var search = Page.GetByText("History");
-        await Expect(search).ToHaveAttributeAsync("id", "history_tab");
+        await Expect(search).ToHaveAttributeAsync("href", "/history");
     }
 
     [TestMethod]
