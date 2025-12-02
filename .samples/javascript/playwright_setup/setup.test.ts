@@ -16,7 +16,7 @@ test('explore locators', async( {page} ) => {
   await expect(heading).toBeVisible();
 
   const search = await page.getByText("History");
-  await expect(search).toHaveAttribute("id","history_tab");
+  await expect(search).toHaveAttribute("href","/history");
 
 });
 
