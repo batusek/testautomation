@@ -9,6 +9,16 @@
   <MSTest>
     <Parallelize>
       <Workers>1</Workers>
+      <Scope>ClassLevel</Scope>
     </Parallelize>
   </MSTest>
+  <LoggerRunSettings>
+    <Loggers>
+      <Logger friendlyName="console" enabled="true">
+        <Configuration>
+          <Verbosity>normal</Verbosity>
+        </Configuration>
+      </Logger>
+    </Loggers>
+  </LoggerRunSettings>
 </RunSettings>

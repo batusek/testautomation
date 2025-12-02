@@ -133,5 +133,32 @@ def typeScript():
     adaptFile("javascript/playwright_external/geocode.ts")
     adaptFile("javascript/playwright_external/geocode.test.ts")
 
+def dotnet():
+    adaptFile("dotnet/playwright_intro/IntroTests.cs")
+    adaptFile("dotnet/playwright_intro/PlaywrightIntro.csproj")
+    adaptFile("dotnet/playwright_intro/instructions.md")
+    adaptFile("dotnet/playwright_intro/PlaywrightConfig.cs")
+
+    adaptFile("dotnet/playwright_locators/LocatorTests.cs")
+    adaptFile("dotnet/playwright_locators/instructions.md")
+    adaptFile("dotnet/playwright_locators/PlaywrightLocators.csproj")
+
+    adaptFile("dotnet/playwright_concepts/ConceptTests.cs")
+    adaptFile("dotnet/playwright_concepts/instructions.md")
+    adaptFile("dotnet/playwright_concepts/PlaywrightConcepts.csproj")
+
+    adaptFile("dotnet/playwright_setup/instructions.md")
+    excerpt = extractExcerpt("../.samples/dotnet/playwright_setup/AuthSetup.cs")
+    adaptFile("dotnet/playwright_setup/SetupTests.cs")
+    insertExcerpts("../dotnet/playwright_setup/SetupTests.cs",excerpt)
+    adaptFile("dotnet/playwright_setup/AuthSetup.cs")
+    adaptFile("dotnet/playwright_setup/PlaywrightSetup.csproj")
+
+    adaptFile("dotnet/Directory.Build.props")
+    adaptFile("dotnet/dotnet.sln")
+    adaptFile("dotnet/instructions.md")
+    adaptFile("dotnet/playwright.runsettings")
+
 # python()
-typeScript()
+# typeScript()
+dotnet()
