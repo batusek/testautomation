@@ -10,6 +10,7 @@ Explore playwright concepts
 9. Take a screenshot with page.screenshot()
 
 Optional
+
 10. Run tests on MS Edge
 11. Mock network calls for css
 12. Wait for multiple events at once
