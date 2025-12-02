@@ -1,22 +1,56 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaywrightIntro", "playwright_intro\PlaywrightIntro.csproj", "{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "playwright_intro", "playwright_intro", "{59F7CD91-79C2-081E-5C08-3E4B171A6AC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "playwright_locators", "playwright_locators", "{875613E4-19EA-5752-81E7-4A145958C954}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaywrightLocators", "playwright_locators\PlaywrightLocators.csproj", "{894C9CB4-8264-490A-B499-0C26E64D4EEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Debug|x64.Build.0 = Debug|Any CPU
+		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Debug|x86.Build.0 = Debug|Any CPU
 		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Release|x64.ActiveCfg = Release|Any CPU
+		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Release|x64.Build.0 = Release|Any CPU
+		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Release|x86.ActiveCfg = Release|Any CPU
+		{A8860244-24E5-1094-0A1E-61FAE2DCA3D0}.Release|x86.Build.0 = Release|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Debug|x64.Build.0 = Debug|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Debug|x86.Build.0 = Debug|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Release|x64.ActiveCfg = Release|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Release|x64.Build.0 = Release|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Release|x86.ActiveCfg = Release|Any CPU
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{894C9CB4-8264-490A-B499-0C26E64D4EEF} = {875613E4-19EA-5752-81E7-4A145958C954}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD732213-9E54-44C8-B0BD-4E74D3E5E73D}
