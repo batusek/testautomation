@@ -77,6 +77,31 @@
             }
         },
         {
+            "label": "build-setup",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/playwright_setup/PlaywrightSetup.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test-setup",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/playwright_setup/PlaywrightSetup.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "test"
+            }
+        },
+        {
             "label": "build-all",
             "command": "dotnet",
             "type": "process",

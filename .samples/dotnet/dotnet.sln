@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "playwright_concepts", "play
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaywrightConcepts", "playwright_concepts\PlaywrightConcepts.csproj", "{2115BC41-756A-492A-B32C-54DA1279EA10}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "playwright_setup", "playwright_setup", "{0F3D398B-8D65-0A38-B487-75E23F7E4362}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaywrightSetup", "playwright_setup\PlaywrightSetup.csproj", "{FD2C7291-64B3-48CD-962B-4F135786956F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,18 @@ Global
 		{2115BC41-756A-492A-B32C-54DA1279EA10}.Release|x64.Build.0 = Release|Any CPU
 		{2115BC41-756A-492A-B32C-54DA1279EA10}.Release|x86.ActiveCfg = Release|Any CPU
 		{2115BC41-756A-492A-B32C-54DA1279EA10}.Release|x86.Build.0 = Release|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Debug|x64.Build.0 = Debug|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Debug|x86.Build.0 = Debug|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Release|x64.ActiveCfg = Release|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Release|x64.Build.0 = Release|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Release|x86.ActiveCfg = Release|Any CPU
+		{FD2C7291-64B3-48CD-962B-4F135786956F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +84,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{894C9CB4-8264-490A-B499-0C26E64D4EEF} = {875613E4-19EA-5752-81E7-4A145958C954}
 		{2115BC41-756A-492A-B32C-54DA1279EA10} = {C65FB759-E17B-71D2-CC7C-A4F4EE449C02}
+		{FD2C7291-64B3-48CD-962B-4F135786956F} = {0F3D398B-8D65-0A38-B487-75E23F7E4362}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD732213-9E54-44C8-B0BD-4E74D3E5E73D}

@@ -35,6 +35,16 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "Run playwright setup",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-setup",
+            "program": "dotnet",
+            "args": ["test", "${workspaceFolder}/playwright_setup/PlaywrightSetup.csproj"],
+            "cwd": "${workspaceFolder}/playwright_setup",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Run all tests",
             "type": "coreclr",
             "request": "launch",
